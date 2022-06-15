@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  /* margin: 0 1px; */
+  font-family: "Montserrat", sans-serif;
+}
+.fcol > .heading {
+  color: #3c3c3c;
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+}
+.app-link {
+  padding: 4px 0;
+  box-sizing: border-box;
+}
+.app-link > .link {
+  /* margin: 100px 0; */
+  font-family: "Roboto", sans-serif;
+  line-height: 2.5rem;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  text-decoration: none;
+  color: #3c3c3c;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.rows {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  justify-content: space-between;
+}
+
+.news-letter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.news-letter > .input-box {
+  border: none;
+  border-bottom: 2px solid #3c3c3c;
+  text-align: center;
+  max-width: 280px;
+  width: 100%;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  padding-left: 0;
+  padding: 8px 10px;
+}
+.news-letter > .submit {
+  border: none;
+  cursor: pointer;
+  background: #3c3c3c;
+  width: auto;
+  color: #fff;
+  padding: 25px 15px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 0;
+  text-transform: uppercase;
+}
+
+.follow-us {
+  padding-top: 10px;
+  padding-left: 10px;
+
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+.follow-us > .follow-line {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  font-weight: bold;
+  color: #3c3c3c;
+}
+.follow-us > a > svg {
+  /* font-size: 18px; */
+  height: 25px;
+  width: 25px;
+  margin: 10px;
+}
+.copyright {
+  padding-left: 10px;
+  letter-spacing: 00.05em;
+  line-height: 1.9;
+}
