@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/serum.css">
+    <link rel="stylesheet" href="styles/footer.css" />
    
 </head>
 <body>
@@ -59,7 +60,13 @@
         </select>
 
     </div>
+    <div id="footer"></div>
 </body>
 </html>
 
-<script src="./scripts/serum.js"></script>
+
+<script type="module">
+    import footer from "./components/footer.js";
+    document.getElementById("footer").innerHTML = footer();
+  </script>
+  <script src="./scripts/serum.js"></script>
