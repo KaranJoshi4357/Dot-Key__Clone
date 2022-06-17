@@ -14,3 +14,8 @@ if (user === null) {
 document.getElementById("submit").addEventListener("click", () => {
   location.href = "payment.html";
 });
+
+let returncart = document.getElementById("returnCart");
+returncart.addEventListener("click", () => {
+  location.href = "../cart.html";
+});

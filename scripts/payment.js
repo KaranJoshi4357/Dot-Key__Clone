@@ -25,3 +25,8 @@ function finalPayment() {
     localStorage.setItem("shipMethod", "card");
   }
 }
+// Return to cart
+let returncart = document.getElementById("returnCart");
+returncart.addEventListener("click", () => {
+  location.href = "../cart.html";
+});

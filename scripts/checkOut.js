@@ -15,3 +15,21 @@ let userAddress = (e) => {
 };
 
 document.getElementById("submit").addEventListener("click", userAddress);
+
+let userData = document.getElementById("showUserData");
+let user = JSON.parse(localStorage.getItem("user"));
+if (user === null) {
+  userData.innerText = "demo@xyz.com";
+} else {
+  userData.innerHTML = `${user.fname} ${user.lname} (${user.email}) `;
+}
+
+let logout = document.getElementById("logOut");
+logout.addEventListener("click", () => {
+  location.replace("./login.html");
+});
+// Return to cart
+let returncart = document.getElementById("returnCart");
+returncart.addEventListener("click", () => {
+  location.href = "../cart.html";
+});
