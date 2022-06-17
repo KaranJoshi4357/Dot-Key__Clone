@@ -41,7 +41,7 @@ let data=[
     image_url:"https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-6_3_360x.jpg?v=1646477545",
     name:"AHA + 2% BHA EXFOLIATING GLOW HYDRO PEEL",
     p_price:"Rs: 595.00",
-    p_dprice:565.00,
+    price:565.00,
     star:"https://previews.123rf.com/images/barks/barks1712/barks171200370/91718901-five-star-rating-icon-3-.jpg",
     
 
@@ -123,10 +123,10 @@ var selected=document.querySelector('#sort').value
 if(selected=="asc"){
 
     data.sort(function(a,b){
-        if(a.p_name>b.p_name){
+        if(a.name>b.name){
             return 1
         }
-        if(a.p_name<b.p_name){
+        if(a.name<b.name){
             return -1
         }
         return 0
@@ -138,10 +138,10 @@ if(selected=="asc"){
 if(selected=="dsc"){
 
     data.sort(function(a,b){
-        if(a.p_name>b.p_name){
+        if(a.name>b.name){
             return -1
         }
-        if(a.p_name<b.p_name){
+        if(a.name<b.name){
             return 1
         }
         return 0
@@ -158,24 +158,24 @@ document.querySelector("#sort").addEventListener("change",handlePrice)
 
 function handlePrice(){
 
-    var price=document.querySelector("#sort").value
+    var dprice=document.querySelector("#sort").value
 
     // console.log(price);
-    if(price=="HTL"){
+    if(dprice=="HTL"){
 
         data.sort(function (a,b){
 
-            return  Number(b.p_dprice)-Number(a.p_dprice)
+            return  Number(b.price)-Number(a.price)
            
         })
         displayData(data);
         
     }
-    if(price=="LTH"){
+    if(dprice=="LTH"){
 
         data.sort(function (a,b){
 
-            let diff=Number(a.p_dprice)-Number(b.p_dprice)
+            let diff=Number(a.price)-Number(b.price)
             return diff
            
         })
