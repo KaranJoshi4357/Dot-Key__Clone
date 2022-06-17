@@ -11,7 +11,7 @@ let userAddress = (e) => {
     phoneNum: document.getElementById("phoneNumber").value,
   };
   localStorage.setItem("shippingAddress", JSON.stringify(data));
-  location.replace("shiping.html");
+  location.href = "shiping.html";
 };
 
 document.getElementById("submit").addEventListener("click", userAddress);

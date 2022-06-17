@@ -12,5 +12,5 @@ if (user === null) {
 }
 
 document.getElementById("submit").addEventListener("click", () => {
-  location.replace("payment.html");
+  location.href = "payment.html";
 });

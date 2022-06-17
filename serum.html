@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/serum.css">
+    <link rel="stylesheet" href="styles/footer.css" />
+   
+</head>
+<body>
+
+    <div> <a href="cart.html"> Go To Cart</a> </div>
+    <div id="k_first_img" >
+        <img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/collections/By-catagory-10_1512x.png?v=1655311449" alt="image">
+
+    </div>
+
+    <h1>SERUMS & OILS</h1>
+
+    <div id="k_cart" ></div>
+
+    <div class="filter-sort" >
+        <div  >
+            <select name="" id="filter">
+                <option value="">Filter</option>
+                <option value="">Acne Control</option>
+                <option value="">Acne Prone Skin</option>
+                <option value="">activeAcne</option>
+                <option value="">Age Defense</option>
+                <option value="">BBB TOP PICK</option>
+                <option value="">bundle</option>
+                <option value="">CICA</option>
+                <option value="">Combination Skin</option>
+                <option value="">Congested Skin</option>
+                <option value="">Daily Essentials</option>
+                <option value="">Dry Skin</option>
+                <option value="">dryAcne</option>
+                <option value="">Dryness And Repair</option>
+                <option value="">Exfoliators</option>
+                <option value="">Hydration</option>
+                <option value="">Mature Skin</option>
+                <option value="">new-drops</option>
+                <option value="">Normal Skin</option>
+                <option value="">Oily Skin</option>
+                <option value="">postAcne</option>
+                <option value="">proneAcne</option>
+                <option value="">Sensitive Skin</option>
+                <option value="">Serums And Oils</option>
+                <option value="">Skin Glow</option>
+            </select>
+        </div>
+        <div class="" ></div>
+        <select name="" id="sort" >
+            <option value="">Featured</option>
+            <!-- sort by alphabetically -->
+            <option value="asc">Alphabetically, A-Z</option>
+            <option value="dsc">Alphabetically, Z-A</option>
+            <option value="LTH">Price, low to high</option>
+            <option value="HTL">Price, high to low</option>
+        </select>
+
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
+
+
+<script type="module">
+    import footer from "./components/footer.js";
+    document.getElementById("footer").innerHTML = footer();
+  </script>
+  <script src="./scripts/serum.js"></script>

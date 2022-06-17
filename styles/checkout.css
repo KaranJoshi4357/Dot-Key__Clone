@@ -245,18 +245,20 @@ a,
   overflow: hidden;
 }
 .productCard {
+  margin-top: 5px;
   display: flex;
   align-items: center;
-  /* justify-content: space-e; */
+  justify-content: space-between;
   gap: 10px;
 }
 .productCard > img {
   border-radius: 10px;
-  width: 80px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 5px;
 }
 .productText > p {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: -1;
 }
 .productCard > .productText > span {
