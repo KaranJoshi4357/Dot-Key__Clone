@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login&signup.css">
+    <link rel="stylesheet" href="./styles/login&signup.css">
     <title>login-page</title>
 </head>
 <body>
@@ -16,32 +16,28 @@
         <div class="icgl">
             <h3><i class="fa-brands fa-google"></i><a  href="">Google Login</a> </h3>
         </div>
-        <div class="formHolder">
+        <form class="formHolder" id="form">
             <div class="input">
                 <div class="label">Email</div>
                 <div class="inputHolder">
-                    <input type="text" value="" required="">
-                    <div>
-                        <div type="tel"></div>
-                    </div>
-                </div>  
-                              
+                    <input type="text" value=""  id="Email">
+                </div>                  
             </div>
+
             <div class="input">
                 <div class="label">Password</div>
                 <div class="inputHolder">
-                    <input type="text" value="" required="">
-                    <div>
-                        <div type="tel"></div>
-                    </div>
-                </div>  
-                              
+                    <input type="password" value="" required="required" id="Password">
+                </div>                
             </div>
+
             <div class="btndiv">
-                <input type="button" value="Sign in" class="btn" >
+                <input type="submit" value="Sign in"required="required"  class="btn" id="signIn">
             </div>
-        </div>   
+            <a href="./signup.html">Don't have an account? Sign up here.</a>
+        </form>   
     </div>
 </body>
 </html>
 <script src="https://kit.fontawesome.com/6f02e62be7.js" crossorigin="anonymous"></script>
+<script src="./scripts/login.js"></script>

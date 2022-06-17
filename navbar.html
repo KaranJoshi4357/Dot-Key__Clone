@@ -4,39 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/navbar.css">
     <title>Navbar</title>
-    <style>
-        #navbar{
-            display: flex;
-            height:150px;
-            width:100%;
-            justify-content: space-evenly;
-            background-color: #fff;
-            border: 1px solid red;
-        }
-
-        #navbar>div{
-            height:100px;
-            width:30%;
-            border: 1px solid black;
-        }
-        #center-logo>img{
-            display:block;
-            height:100%;
-            width:60%;
-            margin:auto;
-        }
-    </style>
 </head>
 <body>
-    <div id="navbar">
-       <div id="left-side-bar">
-
+    <div id="navbar" class="navbar">
+       <div id="left-side-bar" class="container nav-container">
+         <input class="checkbox" type="checkbox" name="" id="" />
+         <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+         </div>  
+         <div class="menu-items">
+         <div id="top-list">
+          <li><a href="#">what's new </a></li>
+          <li><a href="#">party top pics</a></li>
+           <li><a href="#">profile</a></li>
+           <li><a href="#">login</a></li>
+           <li><a href="#">hair care</a></li>
+           <li><a href="#">body care</a></li>
+         </div>
+         <div id="side-image">
+            <img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Burgar_M_Banner.png?v=1655304444" alt="">
+         </div>
+         </div>
+      
        </div>
        <div id="center-logo">
         <img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/unnamed_250x_200x_2x_260x_24408e11-6e3a-4a0c-8327-74d0455f7696_260x.jpg?v=1646547348" alt="">
        </div>
-       <div id="right-side"></div>
+
+       <div id="right-side">
+           <a href=""><i class="fas fa-search"></i></a>
+           <a href=""><i class="fas fa-map-marker-alt"></i></a>
+           <a href=""><i class="fas fa-shopping-bag"></i></a>
+          <a href="./login.html"><i class="fa-solid fa-user"></i></a>   
+      </div>
+     
     </div>
 </body>
 </html>
+<script src="https://kit.fontawesome.com/6f02e62be7.js" crossorigin="anonymous"></script>

@@ -88,6 +88,7 @@
 
 .btndiv {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .formHolder .btn {
@@ -100,3 +101,13 @@
     cursor: pointer;
     padding:10px 50px 10px 50px;
 }
+
+.btndiv+a{
+    text-align: center;
+    font-family:Ubuntu,sans-serif;
+    font-size: 16px;
+    color:#3C3C3C;
+    text-decoration: none;
+    cursor: pointer;
+}
+
