@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information - Dot &amp; Key - Checkout</title>
+
+    <script
+      src="https://kit.fontawesome.com/cc7490e492.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="//cdn.shopify.com/s/files/1/0361/8553/8692/files/d_and_k_and_logo_1_32x32.png?v=1593074179"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="styles/shiping.css" />
+  </head>
+  <body>
+    <div class="kContent">
+      <div class="kMain">
+        <div class="kcHead">
+          <a class="logo logoCenter" href="https://www.dotandkey.com/"
+            ><img
+              alt="Dot &amp; Key"
+              class="logoImage logoImageMedium"
+              src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Dot_Key_Logo.png?137309"
+          /></a>
+          <div class="breadCrumb">
+            <p class="kFirst">Cart</p>
+            <i class="fa-solid fa-chevron-right"></i>
+            <p class="kSecond">Information</p>
+            <i class="fa-solid fa-chevron-right"></i>
+            <p class="kThird">Shipping</p>
+            <i class="fa-solid fa-chevron-right"></i>
+            <p class="kFourth">Payment</p>
+          </div>
+        </div>
+        <div class="kAddressshow">
+          <div class="kcontactShow">
+            <p>Contact</p>
+            <p id="userEmail"></p>
+            <p class="pinkColor">change</p>
+          </div>
+          <!-- <hr /> -->
+          <div class="kShipto">
+            <p>Shipping</p>
+            <p id="shipmentAddress"></p>
+            <p class="pinkColor">change</p>
+          </div>
+        </div>
+        <div class="kshipMethod">
+          <p>Shipping method</p>
+          <div class="methodsHere">
+            <div>
+              <input type="radio" />
+              <label>Standard (3-5 Business Days)</label>
+            </div>
+            <p>Free</p>
+          </div>
+        </div>
+        <div class="kcSubmit">
+          <div class="kcreturnLink">
+            <svg
+              focusable="false"
+              aria-hidden="true"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 10 10"
+            >
+              <path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path>
+            </svg>
+            <span>Return to cart</span>
+          </div>
+          <div class="kcontinueBtn">
+            <button id="submit">Continue to shipping</button>
+          </div>
+        </div>
+        <hr />
+        <div class="kcFooter">
+          <ul>
+            <li>
+              <a
+                href="https://www.dotandkey.com/36185538692/policies/refund-policy.html?locale=en-IN"
+                target="_blank"
+                >Refund policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.dotandkey.com/36185538692/policies/shipping-policy.html?locale=en-IN"
+                target="_blank"
+                >Shipping policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.dotandkey.com/36185538692/policies/privacy-policy.html?locale=en-IN"
+                target="_blank"
+                >Privacy policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.dotandkey.com/36185538692/policies/terms-of-service.html?locale=en-IN"
+                target="_blank"
+                >Terms of service</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <aside id="sideBar" class="kAside"></aside>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import aside from "./components/aside.js";
+  document.getElementById("sideBar").innerHTML = aside();
+</script>
+<script src="scripts/shiping.js"></script>

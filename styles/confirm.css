@@ -1,0 +1,83 @@
+.card {
+  margin: 8% auto;
+  text-align: center;
+  width: 380px;
+  height: 380px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.doneImg {
+  margin: 77px auto 0 auto;
+  text-align: center;
+  height: 50px;
+  display: inline-block;
+  width: 50px;
+  padding: 10%;
+  border: 5px solid green;
+  border-radius: 50%;
+}
+.doneImg > i {
+  transition: all 0.5s ease-in;
+  font-size: 50px;
+  color: green;
+}
+
+.orderText {
+  margin-top: 3em;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#otpNum {
+  margin: 10px auto 0 auto;
+  padding: 10px 15px;
+  width: 60%;
+}
+.titleHead {
+  padding-top: 70px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.submit {
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  padding: 8px 12px;
+  background-color: black;
+}
+/* Card design */
+.cardsPayment {
+  padding: 77px 40px 0 40px;
+}
+.cardsPayment > h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.cardNumber {
+  width: 100%;
+}
+.monthYear {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.monthYear > input {
+  width: 20% !important;
+  margin-left: 35px;
+}
+.monthYear > .cVV > input {
+  width: 30%;
+  margin: 8px 0 8px 80px;
+}
+input[type="number"],
+input[type="text"] {
+  padding: 10px;
+  width: 75%;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid salmon;
+}
