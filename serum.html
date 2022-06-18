@@ -12,9 +12,15 @@
       href="//cdn.shopify.com/s/files/1/0361/8553/8692/files/d_and_k_and_logo_1_32x32.png?v=1593074179"
       type="image/png"
     />
+    <script
+      src="https://kit.fontawesome.com/6f02e62be7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/navbar.css" />
   </head>
   <body>
-    <div><a href="cart.html"> Go To Cart</a></div>
+    <!-- <div><a href="cart.html"> Go To Cart</a></div> -->
+    <div id="navbar" class="navbar"></div>
     <div id="k_first_img">
       <img
         src="https://cdn.shopify.com/s/files/1/0361/8553/8692/collections/By-catagory-10_1512x.png?v=1655311449"
@@ -72,6 +78,8 @@
 
 <script type="module">
   import footer from "./components/footer.js";
+  import navbar from "./components/navbar.js";
   document.getElementById("footer").innerHTML = footer();
+  document.getElementById("navbar").innerHTML = navbar();
 </script>
 <script src="./scripts/serum.js"></script>

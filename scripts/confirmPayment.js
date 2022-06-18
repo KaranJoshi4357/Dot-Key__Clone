@@ -43,6 +43,8 @@ function confirmPage() {
   document.title = "Order Confirmed";
   confirmComp.style.display = "block";
   confirmComp.innerHTML = confirm();
+  let cart = [];
+  localStorage.setItem("cartItem", JSON.stringify(cart));
   let i = 3;
   setInterval(() => {
     location.href = "../index.html";

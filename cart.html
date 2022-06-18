@@ -61,6 +61,9 @@
       /* *{
             background-color: #f8f9fa;
         } */
+      #cont {
+        margin-top: 60px;
+      }
       #container {
         display: flex;
         width: 100%;
@@ -421,17 +424,22 @@
         height: 50px !important;
       }
     </style>
+    <script
+      src="https://kit.fontawesome.com/6f02e62be7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/navbar.css" />
   </head>
   <body>
     <!-- Nav Bar -->
-
+    <div id="navbar"></div>
     <!-- ------------------------------- -->
     <!-- <p></p> -->
 
     <!-- last black page  -->
 
     <!-- border -->
-    <div><a href="serum.html"> GO TO Product Page</a></div>
+    <div><a href="index.html"> GO TO Product Page</a></div>
 
     <div id="cont"></div>
     <div id="cont2"></div>
@@ -544,4 +552,11 @@
   function myfunction() {
     window.location.href = "checkout.html";
   }
+</script>
+
+<script type="module">
+  // import footer from "./components/footer.js";
+  import navbar from "./components/navbar.js";
+  // document.getElementById("footer").innerHTML = footer();
+  document.getElementById("navbar").innerHTML = navbar();
 </script>

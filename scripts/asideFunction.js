@@ -29,7 +29,7 @@ if (!data) {
       let p = document.createElement("p");
       p.innerText = el.name;
       let span = document.createElement("span");
-      span.innerText = el.p_price;
+      span.innerText = el.p_price || el.price;
       div2.append(p);
       div.append(image, div2, span);
       app.append(div);
