@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hair Products</title>
+    <link
+      rel="shortcut icon"
+      href="//cdn.shopify.com/s/files/1/0361/8553/8692/files/d_and_k_and_logo_1_32x32.png?v=1593074179"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <style>
+      .mainContainer {
+        padding-top: 110px;
+      }
+      .slider {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      .prev-arrow:hover,
+      .next-arrow:hover {
+        cursor: pointer;
+        color: rgb(255, 5, 5) !important;
+      }
+      .prev-arrow {
+        left: 70px;
+        color: rgb(0, 55, 255) !important;
+      }
+
+      .slider-content {
+        position: relative;
+        width: 100%;
+      }
+
+      .slider-content-wrapper {
+        display: flex;
+        height: 650px;
+        transition: transform 0.5s ease-in-out;
+        align-content: flex-start;
+      }
+
+      .slider-content__item {
+        flex: 1 0 100%;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        font-size: 100px;
+        color: rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .imgClasshere > img {
+        width: 100%;
+      }
+      /* .image-1 {background-color: #963484;}
+.image-2 {background-color: #3066BE;}
+.image-3 {background-color: #60AFFF;}
+.image-4 {background-color: #28C2FF;}
+.image-5 {background-color: #2AF5FF;}
+.image-6 {background-color: navy;} */
+
+      /* Блок с контролами */
+      .slider-controls {
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Блок с контролами внутри окна */
+      .slider-content__controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        /*transform: translateY(-50%);*/
+        /*padding:0 15px;*/
+      }
+
+      /* Arrows */
+      .prev-arrow,
+      .next-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: rgb(0, 0, 255);
+        width: 10px;
+        transition: all 0.3s;
+      }
+      .prev-arrow {
+        left: 20px;
+      }
+      .next-arrow {
+        right: 20px;
+      }
+
+      .prev-arrow:hover,
+      .next-arrow:hover {
+        cursor: pointer;
+        color: rgba(248, 0, 0, 0.7);
+      }
+
+      /* Dots */
+      .dots {
+        position: absolute;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -25%;
+      }
+
+      .dot {
+        cursor: pointer;
+        width: 8px;
+        height: 8px;
+        margin-right: 4px;
+        background-color: rgba(0, 0, 0, 0.3);
+        /*box-shadow: 0 0 5px 0px rgba(0,0,0,0.9);*/
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+
+      .dot:last-child {
+        margin-right: 0;
+      }
+      .dot:hover {
+        background-color: rgb(255, 5, 5);
+      }
+      .dot--active {
+        background-color: rgba(15, 7, 252, 0.5);
+      }
+
+      /* Buttons */
+
+      button:last-child {
+        margin-right: 0;
+      }
+      button:hover {
+        background-color: #60afff;
+      }
+      button:focus {
+        outline: none;
+      }
+
+      /* Mods */
+      .disabled {
+        background-color: #dccfcf;
+        color: #b0a8a8;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      .d-none {
+        display: none;
+      }
+      .active {
+        opacity: 1;
+      }
+      .centered {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #box-3 {
+        background-image: url("https://cdn.shopify.com/s/files/1/0361/8553/8692/files/5_9852062b-daef-422d-bf00-c4b56acdeb28.png?v=1642765428");
+        height: 820px;
+        width: 100%;
+        margin: auto;
+        margin-top: -4px;
+        display: flex;
+
+        justify-content: space-evenly;
+      }
+
+      #box-4 {
+        background-image: url("https://cdn.shopify.com/s/files/1/0361/8553/8692/files/6_48edab9c-9955-4397-b35b-ecf5931c6812.png?v=1643015795");
+        height: 820px;
+        width: 100%;
+        text-align: center;
+        margin-top: -25px;
+      }
+
+      div#box-2 {
+        margin: auto;
+        width: 100%;
+      }
+      #box-2 > img {
+        width: 100%;
+        padding: 15px 0px 0px 0px;
+      }
+      #box-3 > div {
+        height: 300px;
+        width: 266px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 15px;
+        background-color: white;
+        color: rgb(7, 4, 4);
+        border-radius: 10px;
+        text-align: center;
+        padding-bottom: 15px;
+      }
+
+      #inner-box-4 {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      #inner-box-4 > div {
+        height: 300px;
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 15px;
+        color: rgb(3, 2, 2);
+        box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+        border-radius: 10px;
+        padding: 20px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: center;
+        background-color: #c2d87a;
+      }
+      h1 {
+        font-size: 19px;
+      }
+      h3 {
+        font-size: 15px;
+        text-align: center;
+        color: rgb(15, 196, 87);
+      }
+
+      img.inner-box {
+        position: absolute;
+        width: 100px;
+        margin-left: -170px;
+        margin-bottom: -40px;
+        /* margin-right: 200px; */
+        /* padding-right: 69px; */
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 60%;
+        margin: auto;
+        flex-direction: row;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      img.main-img {
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
+      }
+
+      button {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        padding: 2%;
+        color: #fff;
+        background-color: #5c5c5c;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        /* padding: 6px; */
+      }
+
+      .slider-controls {
+        display: none;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/0122b4412d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- <div><a href="cart.html">Cart</a></div> -->
+    <div id="navbar"></div>
+
+    <!-- slider -->
+    <div class="mainContainer">
+      <div id="slider" class="slider">
+        <div class="slider-content">
+          <div class="slider-content-wrapper">
+            <!-- <div class="slider-content__item image-1"><img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1571460a-0b29-4920-8c80-7e37f048def4.jpg"  alt="Girl in a jacket" width="1350" height="300"> </div>
+				<div class="slider-content__item image-2"><img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/2726f64a-3b5b-4ca9-b066-2ed3d9245582.gif"  alt="Girl in a jacket" width="1350" height="300"></div>
+				<div class="slider-content__item image-3"><img src="https://d32baadbbpueqt.cloudfront.net/d53f8a36-fef3-45ea-b89e-ace53938287d.jpg"  alt="Girl in a jacket" width="1350" height="300"> </div>			 -->
+            <!-- <div class="slider-content__item image-4"><img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/d9103d2b-af25-40c3-b41b-90538502b315.gif"  alt="Girl in a jacket" width="1350" height="900"></div> -->
+            <div class="slider-content__item image-5 imgClasshere">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/hair_dfab2a71-8de1-460d-aaf7-93c8ea69a416.jpg?v=1655305990"
+                alt="Girl in a jacket"
+                width="1300"
+                height="600"
+              />
+            </div>
+            <div class="slider-content__item image-6 imgClasshere">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1b_2.png?v=1646731308"
+                alt=""
+                width="1300"
+                height="600"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <-----------------End oof Slider-------------->
+
+      <div id="box-2">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/Untitled-2_1_dd2b4fbc-12e8-4b8d-9675-2df8fc72dbd9.png?v=1642769314"
+          alt=""
+        />
+      </div>
+
+      <div id="box-3">
+        <div>
+          <div>
+            <img
+              class="inner-box"
+              src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/12x.png?v=1643031632"
+              alt=""
+            />
+          </div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/girl_1.png?v=1643013901"
+            alt=""
+          />
+          <h2>Controle Hair fall</h2>
+        </div>
+
+        <div>
+          <div>
+            <img
+              class="inner-box"
+              src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/12x.png?v=1643031632"
+              alt=""
+            />
+          </div>
+
+          <img
+            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/girl_3.png?v=1643013978"
+            alt=""
+          />
+          <h2>Controle Hair fall</h2>
+        </div>
+        <div>
+          <div>
+            <img
+              class="inner-box"
+              src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/12x.png?v=1643031632"
+              alt=""
+            />
+          </div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/girl_2_5f178ee9-cbb6-4d93-81fe-248206564305.png?v=1643014000"
+            alt=""
+          />
+          <h2>Controle Hair fall</h2>
+        </div>
+      </div>
+
+      <div id="box-4">
+        <h2>THE SCIENCE BEHIND</h2>
+        <h1>Our Formulations</h1>
+        <p>
+          Our Formulations are 90% nature derived, with our focus being the use
+          of scientifically-proven ingredients that ensure promised results.
+        </p>
+
+        <div id="inner-box-4">
+          <div>
+            <h1>AHA – Glycolic & Lactic Acid</h1>
+            <h3>For Spacial Detox</h3>
+            <p>
+              AHAs like Glycolic & Lactic Acid helps exfoliate your scalp by
+              removing dirt & dry skin build up, clearing dead skin cells,
+              dandruff & sebum for a detox treatment while promoting cell
+              turnover.
+            </p>
+          </div>
+          <div>
+            <h1>AHA – Glycolic & Lactic Acid</h1>
+            <h3>For Spacial Detox</h3>
+            <p>
+              AHAs like Glycolic & Lactic Acid helps exfoliate your scalp by
+              removing dirt & dry skin build up, clearing dead skin cells,
+              dandruff & sebum for a detox treatment while promoting cell
+              turnover.
+            </p>
+          </div>
+          <div>
+            <h1>AHA – Glycolic & Lactic Acid</h1>
+            <h3>For Spacial Detox</h3>
+            <p>
+              AHAs like Glycolic & Lactic Acid helps exfoliate your scalp by
+              removing dirt & dry skin build up, clearing dead skin cells,
+              dandruff & sebum for a detox treatment while promoting cell
+              turnover.
+            </p>
+          </div>
+          <div>
+            <h1>AHA – Glycolic & Lactic Acid</h1>
+            <h3>For Spacial Detox</h3>
+            <p>
+              AHAs like Glycolic & Lactic Acid helps exfoliate your scalp by
+              removing dirt & dry skin build up, clearing dead skin cells,
+              dandruff & sebum for a detox treatment while promoting cell
+              turnover.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container"></div>
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>
+
+<script type="module">
+  import footer from "./components/footer.js";
+  document.getElementById("footer").innerHTML = footer();
+</script>
+
+<script>
+  const slider = (function () {
+    //const
+    const slider = document.getElementById("slider"); // основная обертка
+    console.log(slider);
+    const sliderContent = document.querySelector(".slider-content"); // обертка для контейнера слайдов и контролов
+    console.log(sliderContent);
+    const sliderWrapper = document.querySelector(".slider-content-wrapper"); // контейнер для слайдов
+    const elements = document.querySelectorAll(".slider-content__item"); // обертка для слайда
+    const sliderContentControls = createHTMLElement(
+      "div",
+      "slider-content__controls"
+    ); // sliderContent
+    let dotsWrapper = null; //  dots
+    let prevButton = null; // Кнопки
+    let nextButton = null;
+    let autoButton = null;
+    let leftArrow = null; //
+    let rightArrow = null;
+    let intervalId = null; // setInterval
+
+    // data
+    const itemsInfo = {
+      offset: 0, //
+      position: {
+        current: 0, //
+        min: 0, //
+        max: elements.length - 1, //
+      },
+      intervalSpeed: 2000, //
+
+      update: function (value) {
+        this.position.current = value;
+        this.offset = -value;
+      },
+      reset: function () {
+        this.position.current = 0;
+        this.offset = 0;
+      },
+    };
+
+    const controlsInfo = {
+      buttonsEnabled: false,
+      dotsEnabled: false,
+      prevButtonDisabled: true,
+      nextButtonDisabled: false,
+    };
+
+    //
+    function init(props) {
+      // let {buttonsEnabled, dotsEnabled} = controlsInfo;
+      let { intervalSpeed, position, offset } = itemsInfo;
+
+      //
+      if (slider && sliderContent && sliderWrapper && elements) {
+        //
+        if (props && props.intervalSpeed) {
+          intervalSpeed = props.intervalSpeed;
+        }
+        if (props && props.currentItem) {
+          if (
+            parseInt(props.currentItem) >= position.min &&
+            parseInt(props.currentItem) <= position.max
+          ) {
+            position.current = props.currentItem;
+            offset = -props.currentItem;
+          }
+        }
+        if (props && props.buttons) {
+          controlsInfo.buttonsEnabled = true;
+        }
+        if (props && props.dots) {
+          controlsInfo.dotsEnabled = true;
+        }
+
+        _updateControlsInfo();
+        _createControls(controlsInfo.dotsEnabled, controlsInfo.buttonsEnabled);
+        _render();
+      } else {
+        console.log(
+          "Разметка слайдера задана неверно. Проверьте наличие всех необходимых классов 'slider/slider-content/slider-wrapper/slider-content__item'"
+        );
+      }
+    }
+
+    //
+    function _updateControlsInfo() {
+      const { current, min, max } = itemsInfo.position;
+      controlsInfo.prevButtonDisabled = current > min ? false : true;
+      controlsInfo.nextButtonDisabled = current < max ? false : true;
+    }
+
+    //
+    function _createControls(dots = false, buttons = false) {
+      //
+      sliderContent.append(sliderContentControls);
+
+      // Контролы
+      createArrows();
+      buttons ? createButtons() : null;
+      dots ? createDots() : null;
+
+      // Arrows function
+      function createArrows() {
+        const dValueLeftArrow =
+          "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z";
+        const dValueRightArrow =
+          "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z";
+        const leftArrowSVG = createSVG(dValueLeftArrow);
+        const rightArrowSVG = createSVG(dValueRightArrow);
+
+        leftArrow = createHTMLElement("div", "prev-arrow");
+        leftArrow.append(leftArrowSVG);
+        leftArrow.addEventListener("click", () =>
+          updateItemsInfo(itemsInfo.position.current - 1)
+        );
+
+        rightArrow = createHTMLElement("div", "next-arrow");
+        rightArrow.append(rightArrowSVG);
+        rightArrow.addEventListener("click", () =>
+          updateItemsInfo(itemsInfo.position.current + 1)
+        );
+
+        sliderContentControls.append(leftArrow, rightArrow);
+
+        // SVG function
+        function createSVG(dValue, color = "currentColor") {
+          const svg = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg"
+          );
+          svg.setAttribute("viewBox", "0 0 256 512");
+          const path = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path"
+          );
+          path.setAttribute("fill", color);
+          path.setAttribute("d", dValue);
+          svg.appendChild(path);
+          return svg;
+        }
+      }
+
+      // Dots function
+      function createDots() {
+        dotsWrapper = createHTMLElement("div", "dots");
+        for (let i = 0; i < itemsInfo.position.max + 1; i++) {
+          const dot = document.createElement("div");
+          dot.className = "dot";
+          dot.addEventListener("click", function () {
+            updateItemsInfo(i);
+          });
+          dotsWrapper.append(dot);
+        }
+        sliderContentControls.append(dotsWrapper);
+      }
+
+      // Buttons function
+      function createButtons() {
+        const controlsWrapper = createHTMLElement("div", "slider-controls");
+        prevButton = createHTMLElement("button", "prev-control", "Prev");
+        prevButton.addEventListener("click", () =>
+          updateItemsInfo(itemsInfo.position.current - 1)
+        );
+
+        autoButton = createHTMLElement("button", "auto-control", "Auto");
+        autoButton.addEventListener("click", () => {
+          intervalId = setInterval(function () {
+            if (itemsInfo.position.current < itemsInfo.position.max) {
+              itemsInfo.update(itemsInfo.position.current + 1);
+            } else {
+              itemsInfo.reset();
+            }
+            _slideItem();
+          }, itemsInfo.intervalSpeed);
+        });
+
+        nextButton = createHTMLElement("button", "next-control", "Next");
+        nextButton.addEventListener("click", () =>
+          updateItemsInfo(itemsInfo.position.current + 1)
+        );
+
+        controlsWrapper.append(prevButton, autoButton, nextButton);
+        slider.append(controlsWrapper);
+      }
+    }
+
+    //  (buttons, arrows)
+    function setClass(options) {
+      if (options) {
+        options.forEach(({ element, className, disabled }) => {
+          if (element) {
+            disabled
+              ? element.classList.add(className)
+              : element.classList.remove(className);
+          } else {
+            console.log("Error: function setClass(): element = ", element);
+          }
+        });
+      }
+    }
+
+    //
+    function updateItemsInfo(value) {
+      itemsInfo.update(value);
+      _slideItem(true);
+    }
+
+    //
+    function _render() {
+      const { prevButtonDisabled, nextButtonDisabled } = controlsInfo;
+      let controlsArray = [
+        {
+          element: leftArrow,
+          className: "d-none",
+          disabled: prevButtonDisabled,
+        },
+        {
+          element: rightArrow,
+          className: "d-none",
+          disabled: nextButtonDisabled,
+        },
+      ];
+      if (controlsInfo.buttonsEnabled) {
+        controlsArray = [
+          ...controlsArray,
+          {
+            element: prevButton,
+            className: "disabled",
+            disabled: prevButtonDisabled,
+          },
+          {
+            element: nextButton,
+            className: "disabled",
+            disabled: nextButtonDisabled,
+          },
+        ];
+      }
+
+      //
+      setClass(controlsArray);
+
+      //
+      sliderWrapper.style.transform = `translateX(${itemsInfo.offset * 100}%)`;
+
+      //  (dot)
+      if (controlsInfo.dotsEnabled) {
+        if (document.querySelector(".dot--active")) {
+          document
+            .querySelector(".dot--active")
+            .classList.remove("dot--active");
+        }
+        dotsWrapper.children[itemsInfo.position.current].classList.add(
+          "dot--active"
+        );
+      }
+    }
+
+    //
+    function _slideItem(autoMode = false) {
+      if (autoMode && intervalId) {
+        clearInterval(intervalId);
+      }
+      _updateControlsInfo();
+      _render();
+    }
+
+    //
+    function createHTMLElement(tagName = "div", className, innerHTML) {
+      const element = document.createElement(tagName);
+      className ? (element.className = className) : null;
+      innerHTML ? (element.innerHTML = innerHTML) : null;
+      return element;
+    }
+
+    //
+    return { init };
+  })();
+
+  slider.init({
+    // intervalSpeed: 1000,
+    currentItem: 0,
+    buttons: true,
+    dots: true,
+  });
+
+  var Eyes = [
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/MORINGASHAMPOO.jpg?v=1655302883",
+      name: "Stroke Of Genius Heavy-Duty Kohl - 05 Black… ",
+      price: 499,
+      rating: "4.5(37)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/MORINGAMASK.jpg?v=1655303151",
+      name: "Stroke Of Genius Heavy-Duty Kohl - 05 Black… ",
+      price: 499,
+      rating: "4.7(10)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-5_4_d34e6033-1d52-4a86-85c5-6419c4d1fdb1.jpg?v=1655310462",
+      name: "Stroke Of Genius Heavy-Duty Kohl - 05 Black… ",
+      price: 249,
+      rating: "4.8(63)",
+      strike: null,
+    },
+
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1_1.jpg?v=1655310429",
+      name: "Kohl Of Honour Intense Kajal - 01 Black Out … ",
+      price: 799,
+      rating: "4.8(45)",
+      strike: 999,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/DAMAGESHAMPOO.jpg?v=1655303107",
+      name: "Eye Love Jelly Eyeshadow",
+      price: 299,
+      rating: "4.7(12)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-2_1.jpg?v=1655310406",
+      name: "Wingman Waterproof Microliner - 01 I'll Be… ",
+      price: 499,
+      rating: "4.7(41)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/Artboard1-3_1_7e78739e-57e0-4fc0-bffe-f68bd86ab876.jpg?v=1655310503",
+      name: "Born To Wing Gel Eyeliner - 01 Blackmagic… ",
+      price: 599,
+      rating: "4.6(55)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/2_7.jpg?v=1643096418",
+      name: "Two Good To Be True Dual Eyeshadow",
+      price: 499,
+      rating: "4.9(29)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/4_6_44a76a9c-93bc-4179-a6f8-bc5f0794ee05.jpg?v=1643096708",
+      name: "Eye Lit You So! Vivid Eyeliner",
+      price: 699,
+      rating: "4.9(27)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/1_5.jpg?v=1643113374",
+      name: "Graphic Jam 36HR Eyeliner - 01 Blackest Black",
+      price: 699,
+      rating: "4.9(19)",
+      strike: null,
+    },
+    {
+      image_url:
+        "https://cdn.shopify.com/s/files/1/0361/8553/8692/products/3_6.jpg?v=1643115129",
+      name: "Wonder Woman Mixed Palette - 01 Cosmos Co… ",
+      price: 999,
+      rating: "4.7(14)",
+      strike: null,
+    }, //{
+    //     image_url:
+    //         "",
+    //     name: "Arch Arrival Brow Pen",
+    //     price:  499,
+    //     rating: "4.6(19)",
+    //     strike: null,
+    // },
+  ];
+
+  localStorage.setItem("cart", JSON.stringify(Eyes));
+
+  Eyes.map(function (elem) {
+    var box = document.createElement("div");
+    var top = document.createElement("div");
+    var bottom = document.createElement("div");
+    var rating_wrapper = document.createElement("div");
+    var price_wrapper = document.createElement("div");
+
+    var shade = document.createElement("p");
+    shade.textContent = elem.shade;
+
+    var img_shade = document.createElement("img");
+    img_shade.src = elem.shade_image;
+
+    var img = document.createElement("img");
+    img.src = elem.image_url;
+    img.classList.add("main-img");
+
+    var name = document.createElement("p");
+    name.textContent = elem.name;
+
+    var price = document.createElement("span");
+    price.innerText = `Rs. ${elem.price}`;
+    //price.innerText = "Rs." + elem.price;
+
+    var strike = document.createElement("s");
+    strike.innerText = elem.strike ? `Rs. ${elem.strike}` : "";
+
+    var rating = document.createElement("span");
+    rating.innerText = elem.rating;
+
+    var star_icon = document.createElement("span");
+    star_icon.innerHTML += '<i class="fa fa-star" aria-hidden="true"></i>';
+
+    var heart_icon = document.createElement("span");
+    heart_icon.innerHTML += '<i class="fa-regular fa-heart"></i>';
+    heart_icon.addEventListener("click", function () {
+      wishList(elem);
+    });
+
+    name.classList.add("name");
+    box.classList.add("box");
+    top.classList.add("top");
+    bottom.classList.add("bottom-block");
+    rating_wrapper.classList.add("rating-wrapper");
+    price_wrapper.classList.add("price-wrapper");
+
+    var btn = document.createElement("button");
+    btn.innerText = "ADD TO CART";
+    btn.addEventListener("click", function () {
+      addToCart(elem);
+    });
+
+    top.append(shade, img_shade);
+    price_wrapper.append(strike, price);
+    rating_wrapper.append(star_icon, rating);
+    bottom.append(heart_icon, btn);
+    box.append(img, name, price_wrapper, rating_wrapper, bottom);
+
+    document.querySelector(".container").append(box);
+  });
+
+  var cartArray = JSON.parse(localStorage.getItem("cartItem")) || [];
+  function addToCart(elem) {
+    cartArray.push(elem);
+    alert("item added to cart");
+
+    localStorage.setItem("cartItem", JSON.stringify(cartArray));
+  }
+
+  var cartwish = JSON.parse(localStorage.getItem("wishlistItem")) || [];
+  function wishList(elem) {
+    cartwish.push(elem);
+    alert("item added to wishlist");
+
+    localStorage.setItem("wishlistItem", JSON.stringify(cartwish));
+  }
+</script>
+
+<script type="module">
+  // import footer from "./components/footer.js";
+  import navbar from "./components/navbar.js";
+  // document.getElementById("footer").innerHTML = footer();
+  document.getElementById("navbar").innerHTML = navbar();
+</script>

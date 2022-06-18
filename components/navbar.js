@@ -8,7 +8,7 @@ function navbar() {
         <div>
           <ul>
           <li><a href="./index.html">WHAT'S NEW?</a></li>
-            <li><a href="#">HAIR CARE</a></li>
+            <li><a href="./hair.html">HAIR CARE</a></li>
             <li><a href="./serum.html">BODY CARE</a></li>
             <li><a href="#">IKWI NUTRITION</a></li>
           </ul>
