@@ -33,3 +33,14 @@ let returncart = document.getElementById("returnCart");
 returncart.addEventListener("click", () => {
   location.href = "../cart.html";
 });
+/*User Data extract */
+
+let fristName = document.getElementById("fname");
+let lastName = document.getElementById("lname");
+if (!user) {
+  fristName.value = null;
+  lastName.value = null;
+} else {
+  fristName.value = user.fname;
+  lastName.value = user.lname;
+}
