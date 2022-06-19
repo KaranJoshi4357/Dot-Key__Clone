@@ -1,6 +1,6 @@
 function payCard() {
   return `<h2>Enter Card's Details</h2>
-    <input type="number" name="" id="cardNumber" placeholder="Card Number" />
+    <input type="number" name="" id="cardNumber" placeholder="Card Number (16 digit number)" />
     <br />
     <div class="monthYear">
       <input type="number" name="" id="month" placeholder="MM/YY" />

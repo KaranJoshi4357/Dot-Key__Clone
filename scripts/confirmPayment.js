@@ -69,7 +69,7 @@ function cardData() {
 }
 function cardDataConfir(data) {
   if (
-    data.cNum.length === 6 &&
+    data.cNum.length === 16 &&
     data.mmyy.length === 5 &&
     data.cvv.length === 3
   ) {
